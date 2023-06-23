@@ -1,3 +1,5 @@
+import AntDesign from "react-native-vector-icons/AntDesign";
+import Icon from "react-native-vector-icons/FontAwesome";
 import Ionic from "react-native-vector-icons/Ionicons";
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
@@ -7,20 +9,20 @@ const BottomTabView = () => {
   const Tab = createMaterialTopTabNavigator();
 
   let squares = [];
-  let numberOfSquare = 9;
+  let numberOfSquare = 12;
 
   for (let index = 0; index < numberOfSquare; index++) {
     squares.push(
       <View key={index}>
         <View
           style={{
-            width: 130,
-            height: 150,
-            marginVertical: 2,
-            marginHorizontal: 1,
+            width: 131,
+            height: 131,
+            marginVertical: 1,
+            marginHorizontal: 6,
             backgroundColor: 'black',
             opacity: 0.2,
-            borderRadius:10,
+            borderRadius:5,
             borderColour: 'black',
           }}></View>
       </View>,
@@ -108,17 +110,17 @@ const BottomTabView = () => {
         tabBarIcon: ({focused, colour}) => {
           let iconName;
           if (route.name === 'Posts') {
-            iconName = focused ? 'ios-apps-sharp' : 'ios-apps-sharp';
+            iconName = focused ? 'appstore1' : 'appstore1';
             colour = focused ? 'black' : 'gray';
           } else if (route.name === 'Reels') {
-            iconName = focused ? 'ios-play-circle' : 'ios-play-circle-outline';
+            iconName = focused ? 'playcircleo' : 'play';
             colour = focused ? 'black' : 'gray';
           } else if (route.name === 'Tags') {
-            iconName = focused ? 'ios-person' : 'ios-person-outline';
-            colour = focused ? 'black' : 'gray';
+            iconName = focused ? 'tagso' : 'tags';
+            colour = focused ? 'black' : 'grey';
           }
 
-          return <Ionic name={iconName} color={colour} size={22} />;
+          return <AntDesign name={iconName} color={colour} size={24} />;
         },
       })}>
       <Tab.Screen name="Posts" component={Posts} />

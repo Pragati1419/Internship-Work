@@ -1,3 +1,4 @@
+import AntDesign from "react-native-vector-icons/AntDesign";
 import Feather from "react-native-vector-icons/Feather";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -10,12 +11,17 @@ export const ProfileBody = ({
   Channels,
   followers,
   following,
+  tagline ,
+  Rewards,
+  Spinner,
+  Leaderboard,
 }) => {
   return (
     <View>
       {accountName ? (
         <View
           style={{
+             
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -32,6 +38,7 @@ export const ProfileBody = ({
               }}>
               {accountName}
             </Text>
+            
             <Feather
               name="cleverqazi"
               style={{
@@ -43,8 +50,8 @@ export const ProfileBody = ({
             />
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Feather
-              name="jackson"
+          <Feather
+              name="popup"
               style={{
                 fontSize: 25,
                 color: 'black',
@@ -74,6 +81,7 @@ export const ProfileBody = ({
           <Image
             source={profileImage}
             style={{
+              
               resizeMode: 'cover',
               width: 80,
               height: 80,
@@ -102,9 +110,11 @@ export const ProfileBody = ({
         <View style={{alignItems: 'center'}}>
           <Text style={{fontWeight: 'bold', fontSize: 18}}>{following}</Text>
           <Text>Following</Text>
+          
         </View>
       </View>
     </View>
+    
   );
 };
 
@@ -122,6 +132,7 @@ export const ProfileButtons = ({id, name, accountName, profileImage}) => {
             justifyContent: 'space-evenly',
             paddingVertical: 5,
           }}>
+          
           <TouchableOpacity
             onPress={() =>
               navigation.push('EditProfile', {
@@ -207,6 +218,7 @@ export const ProfileButtons = ({id, name, accountName, profileImage}) => {
             }}>
             <Feather
               name="cleverqazi"
+              tagline = "Traveller || Blogger || Nature💚"
               style={{fontSize: 20, color: 'black'}}
             />
           </View>

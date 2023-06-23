@@ -43,6 +43,7 @@ const ProfileScreen = () => {
   }
 
   return (
+    
     <View style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
       <View style={{width: '100%', padding: 10}}>
         <ProfileBody
@@ -51,12 +52,15 @@ const ProfileScreen = () => {
           followers="3.6M"
           following="30"
           Channels="4"
+          tagline = " Traveller || Blogger || Nature💚"
+          
         />
         <ProfileButtons
           id={0}
           name="cleverqazi"
           accountName="cleverqazi"
           profileImage={{uri: imageUrl}}
+          
         />
       </View>
       <View>
@@ -65,6 +69,7 @@ const ProfileScreen = () => {
             padding: 5,
             letterSpacing: 1,
             fontSize: 14,
+            fontWeight: 'bold',
           }}>
           Story Highlights
          
